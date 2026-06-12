@@ -1,0 +1,446 @@
+# OSI Model
+
+---
+
+# Introduction
+
+The **OSI (Open Systems Interconnection) Model** is a conceptual framework developed by the International Organization for Standardization (ISO) to standardize communication between computer systems.
+
+Before the introduction of the OSI model, different manufacturers used their own communication methods, making interoperability difficult. The OSI model provides a common structure that allows devices and software from different vendors to communicate effectively.
+
+The model divides the communication process into seven layers, where each layer performs a specific function and provides services to the layer above it.
+
+---
+
+# Purpose of the OSI Model
+
+The OSI model was designed to simplify network communication and provide a standard approach for understanding how data moves between systems.
+
+The model helps in:
+
+* Standardizing communication protocols.
+* Simplifying network design.
+* Facilitating troubleshooting.
+* Promoting interoperability among different devices and technologies.
+* Dividing complex communication tasks into smaller, manageable functions.
+
+---
+
+# Layers of the OSI Model
+
+The OSI model consists of seven layers arranged from top to bottom:
+
+| Layer Number | Layer Name         |
+| ------------ | ------------------ |
+| 7            | Application Layer  |
+| 6            | Presentation Layer |
+| 5            | Session Layer      |
+| 4            | Transport Layer    |
+| 3            | Network Layer      |
+| 2            | Data Link Layer    |
+| 1            | Physical Layer     |
+
+---
+
+# Mnemonic
+
+A commonly used mnemonic to remember the layers from top to bottom is:
+
+**Please Do Not Throw Sausage Pizza Away**
+
+---
+
+# Layer 7: Application Layer
+
+## Introduction
+
+The Application Layer is the topmost layer of the OSI model. It acts as the interface between the user and the network.
+
+This layer does not represent applications themselves; instead, it provides network services that allow applications to communicate.
+
+---
+
+## Functions
+
+The Application Layer is responsible for:
+
+* Providing network services to users.
+* Supporting file transfer.
+* Enabling email communication.
+* Facilitating remote login.
+* Providing access to web services.
+
+---
+
+## Common Protocols
+
+* HTTP
+* HTTPS
+* FTP
+* SMTP
+* POP3
+* IMAP
+* DNS
+
+---
+
+## Importance
+
+Without the Application Layer, users would not be able to access network services such as websites, email systems, and file-sharing applications.
+
+---
+
+# Layer 6: Presentation Layer
+
+## Introduction
+
+The Presentation Layer is responsible for ensuring that information is presented in a format understandable by the receiving system.
+
+It serves as a translator between different data formats.
+
+---
+
+## Functions
+
+### Data Translation
+
+Different systems may represent data differently. The Presentation Layer converts data into a common format.
+
+### Encryption
+
+Sensitive information can be encrypted before transmission and decrypted at the receiver's side.
+
+Encryption enhances security and protects data from unauthorized access.
+
+### Compression
+
+Data compression reduces the amount of information transmitted, thereby improving efficiency and reducing bandwidth usage.
+
+---
+
+## Importance
+
+This layer ensures compatibility and secure communication between systems.
+
+---
+
+# Layer 5: Session Layer
+
+## Introduction
+
+The Session Layer establishes, maintains, and terminates communication sessions between devices.
+
+A session represents a continuous exchange of information between two systems.
+
+---
+
+## Functions
+
+### Session Establishment
+
+Creates a communication channel between devices.
+
+### Session Maintenance
+
+Keeps the communication active while data exchange occurs.
+
+### Session Termination
+
+Closes the communication after data transfer is complete.
+
+### Synchronization
+
+Provides checkpoints that help resume communication if interruptions occur.
+
+---
+
+## Importance
+
+The Session Layer ensures organized and reliable communication between applications.
+
+---
+
+# Layer 4: Transport Layer
+
+## Introduction
+
+The Transport Layer provides end-to-end communication between systems.
+
+It ensures that data reaches the destination accurately and efficiently.
+
+---
+
+## Functions
+
+### Segmentation
+
+Large messages are divided into smaller segments before transmission.
+
+This process makes data transfer more manageable.
+
+### Reassembly
+
+The receiving system combines segments to reconstruct the original message.
+
+### Flow Control
+
+Flow control prevents a fast sender from overwhelming a slower receiver.
+
+### Error Control
+
+The Transport Layer detects and handles transmission errors to ensure reliable communication.
+
+### End-to-End Delivery
+
+This layer guarantees communication between the source and destination systems.
+
+---
+
+## Protocols Used
+
+### TCP (Transmission Control Protocol)
+
+TCP provides reliable communication and guarantees ordered delivery.
+
+### UDP (User Datagram Protocol)
+
+UDP provides faster communication with minimal overhead but does not guarantee delivery.
+
+---
+
+## Importance
+
+The Transport Layer ensures that information reaches the destination correctly and in the proper sequence.
+
+---
+
+# Layer 3: Network Layer
+
+## Introduction
+
+The Network Layer is responsible for routing and logical addressing.
+
+Its primary objective is to determine the best path for delivering packets between networks.
+
+---
+
+## Functions
+
+### Logical Addressing
+
+Devices are identified using IP addresses.
+
+### Routing
+
+The layer determines the most efficient path for packet transmission.
+
+### Packet Forwarding
+
+Packets are transferred between networks using routers.
+
+---
+
+## Protocols
+
+* IP
+* ICMP
+* ARP
+
+---
+
+## Device Associated
+
+**Router**
+
+---
+
+## Importance
+
+The Network Layer enables communication between devices located on different networks.
+
+---
+
+# Layer 2: Data Link Layer
+
+## Introduction
+
+The Data Link Layer provides node-to-node communication and ensures reliable transmission over a physical medium.
+
+---
+
+## Functions
+
+### Framing
+
+Data is divided into units called frames.
+
+### Physical Addressing
+
+Devices are identified using MAC addresses.
+
+### Error Detection
+
+The layer checks for transmission errors.
+
+### Access Control
+
+Determines which device may access the communication medium.
+
+---
+
+## Sublayers
+
+### Logical Link Control (LLC)
+
+Responsible for error and flow control.
+
+### Media Access Control (MAC)
+
+Responsible for physical addressing.
+
+---
+
+## Devices Associated
+
+* Switch
+* Bridge
+
+---
+
+## Importance
+
+The Data Link Layer provides reliable communication between directly connected devices.
+
+---
+
+# Layer 1: Physical Layer
+
+## Introduction
+
+The Physical Layer is the lowest layer of the OSI model and is responsible for transmitting raw bits over a communication medium.
+
+---
+
+## Functions
+
+### Bit Transmission
+
+Converts data into electrical, optical, or radio signals.
+
+### Signal Representation
+
+Defines voltage levels and timing mechanisms.
+
+### Physical Connectivity
+
+Specifies connectors, cables, and transmission media.
+
+---
+
+## Devices Associated
+
+* Hub
+* Repeater
+* Cables
+
+---
+
+## Importance
+
+Without the Physical Layer, actual transmission of information would not be possible.
+
+---
+
+# Protocol Data Units (PDUs)
+
+As data moves through the layers, it is represented in different forms.
+
+| Layer        | Data Unit |
+| ------------ | --------- |
+| Application  | Data      |
+| Presentation | Data      |
+| Session      | Data      |
+| Transport    | Segment   |
+| Network      | Packet    |
+| Data Link    | Frame     |
+| Physical     | Bits      |
+
+---
+
+# Encapsulation
+
+## Introduction
+
+Encapsulation is the process of adding layer-specific information to data as it moves downward through the OSI model.
+
+Each layer adds its own header containing control information.
+
+This process allows the receiving system to understand how the data should be processed.
+
+---
+
+## Steps of Encapsulation
+
+1. Application Layer generates data.
+2. Transport Layer divides the data into segments.
+3. Network Layer converts segments into packets.
+4. Data Link Layer creates frames.
+5. Physical Layer converts frames into bits for transmission.
+
+---
+
+# Decapsulation
+
+Decapsulation is the reverse process of encapsulation.
+
+As data moves upward through the layers at the receiver's side, each layer removes its corresponding header and processes the information.
+
+Eventually, the original message reaches the application.
+
+---
+
+# OSI Model vs TCP/IP Model
+
+| Feature          | OSI Model                | TCP/IP Model             |
+| ---------------- | ------------------------ | ------------------------ |
+| Number of Layers | 7                        | 4                        |
+| Developed By     | ISO                      | DARPA                    |
+| Nature           | Reference Model          | Protocol Suite           |
+| Usage            | Conceptual Understanding | Practical Implementation |
+| Flexibility      | More Structured          | More Flexible            |
+
+---
+
+# Advantages of the OSI Model
+
+* Provides a standardized framework.
+* Simplifies troubleshooting.
+* Encourages interoperability.
+* Divides communication into manageable layers.
+* Facilitates protocol development.
+
+---
+
+# Limitations of the OSI Model
+
+* More theoretical than practical.
+* Some layers overlap in functionality.
+* Rarely implemented exactly as defined.
+* Modern networks primarily follow the TCP/IP model.
+
+---
+
+# Conclusion
+
+The OSI model provides a structured framework for understanding network communication. By dividing communication into seven layers, it simplifies network design, troubleshooting, and protocol development. Although modern networks are based primarily on the TCP/IP model, the OSI model remains one of the most important concepts in computer networking and serves as the foundation for understanding how data travels across networks.
+
+---
+
+### Author
+
+**Sahil**
+
+**UID: 25MCI10088**
+
+---
+
