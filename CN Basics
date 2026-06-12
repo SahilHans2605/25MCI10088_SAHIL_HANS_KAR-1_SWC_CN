@@ -1,0 +1,329 @@
+# Computer Network Basics
+
+---
+
+## Introduction
+
+A computer network is a system that allows two or more devices to communicate and share resources with each other. These devices may include computers, smartphones, servers, printers, and other electronic equipment. Communication between devices is possible because they follow a common set of rules known as **network protocols**.
+
+In today's world, computer networks are the foundation of almost every digital service. Activities such as browsing websites, sending emails, online banking, video conferencing, and cloud computing all rely on networking technologies.
+
+---
+
+# Why Do We Need Computer Networks?
+
+Before computer networks became common, information and resources were isolated within individual systems. Networking solved this problem by enabling devices to exchange information and share hardware and software resources efficiently.
+
+Some important reasons for using computer networks are:
+
+### Resource Sharing
+
+Multiple users can share resources such as printers, storage devices, applications, and internet connections. This reduces the overall cost and improves efficiency.
+
+### Communication
+
+Networks provide a medium for communication between users located anywhere in the world. Services like email, instant messaging, voice calls, and video conferencing are all possible because of computer networks.
+
+### Reliability and Backup
+
+Important information can be stored centrally and backed up regularly. Even if one device fails, data can often be recovered from another location.
+
+### Scalability
+
+Networks can be expanded as the number of users or devices increases. This flexibility makes networks suitable for both small homes and large organizations.
+
+---
+
+# Components of a Computer Network
+
+A network consists of several fundamental components that work together to enable communication.
+
+## Sender
+
+The sender is the device that initiates communication and transmits data.
+
+## Receiver
+
+The receiver is the destination device that accepts and processes the transmitted information.
+
+## Message
+
+The message represents the information being exchanged. It may consist of text, images, audio, video, or any other form of digital data.
+
+## Transmission Medium
+
+The transmission medium provides the path through which data travels. It may be physical, such as cables, or wireless, such as radio waves.
+
+## Protocol
+
+Protocols are a set of rules that govern communication between devices. They ensure that information is transmitted in an organized and understandable manner.
+
+---
+
+# Characteristics of an Effective Network
+
+A good network should satisfy certain requirements.
+
+## Performance
+
+Performance refers to how efficiently the network transfers data. Factors affecting performance include bandwidth, delay, and the number of connected devices.
+
+A network with high bandwidth and low delay provides better user experience.
+
+---
+
+## Reliability
+
+Reliability indicates how dependable the network is. A reliable network experiences fewer failures and can recover quickly when problems occur.
+
+---
+
+## Security
+
+Security protects information and network resources from unauthorized access, modification, or destruction. Modern networks employ techniques such as encryption, authentication, and firewalls to safeguard data.
+
+---
+
+# Data Communication
+
+Data communication is the process of exchanging information between two or more devices through a communication channel.
+
+For successful communication, five basic elements are required:
+
+1. Sender
+2. Receiver
+3. Message
+4. Transmission Medium
+5. Protocol
+
+These elements work together to ensure that information reaches the intended destination accurately and efficiently.
+
+---
+
+# Modes of Communication
+
+Depending on how data flows between devices, communication can be classified into three types.
+
+---
+
+## Simplex Communication
+
+In simplex communication, data flows in only one direction. One device acts solely as the sender while the other acts only as the receiver.
+
+Since communication occurs in a single direction, feedback from the receiver is not possible.
+
+### Characteristics
+
+* One-way communication
+* No response mechanism
+* Simple and inexpensive
+
+---
+
+## Half Duplex Communication
+
+Half duplex communication allows data transmission in both directions, but not simultaneously. At any instant, only one device can send data while the other receives it.
+
+Because devices take turns transmitting information, the communication speed is lower than full duplex communication.
+
+### Characteristics
+
+* Bidirectional communication
+* One direction active at a time
+* More efficient than simplex communication
+
+---
+
+## Full Duplex Communication
+
+Full duplex communication allows both devices to transmit and receive data simultaneously.
+
+Since communication occurs in both directions at the same time, full duplex systems provide higher efficiency and faster data transfer.
+
+### Characteristics
+
+* Simultaneous communication
+* Higher performance
+* Widely used in modern communication systems
+
+---
+
+# Types of Computer Networks
+
+Computer networks are classified according to the geographical area they cover.
+
+---
+
+## Personal Area Network (PAN)
+
+A Personal Area Network is a small network designed for connecting devices belonging to a single user. It operates over a short distance and is commonly used for personal devices.
+
+Because of its limited range, a PAN is simple to manage and inexpensive to maintain.
+
+---
+
+## Local Area Network (LAN)
+
+A Local Area Network covers a relatively small geographical area such as a home, office, or school.
+
+LANs provide high-speed communication and allow users to share resources efficiently. Due to their limited size, they are easier to maintain and offer better performance compared to larger networks.
+
+---
+
+## Metropolitan Area Network (MAN)
+
+A Metropolitan Area Network covers a larger area than a LAN and typically spans an entire city.
+
+MANs are used to connect multiple local networks and provide communication services across metropolitan regions.
+
+---
+
+## Wide Area Network (WAN)
+
+A Wide Area Network extends over very large geographical areas and can connect devices located in different countries or continents.
+
+The Internet is the largest example of a WAN. WANs enable global communication but generally involve greater complexity and higher costs.
+
+---
+
+# Network Topologies
+
+Network topology refers to the physical or logical arrangement of devices and communication links within a network.
+
+The choice of topology influences performance, reliability, scalability, and maintenance.
+
+---
+
+## Bus Topology
+
+In a bus topology, all devices are connected to a common communication line known as the backbone.
+
+Data transmitted by one device travels through the shared cable and becomes available to all connected devices.
+
+Although bus topology is simple and inexpensive, failure of the backbone cable can disrupt the entire network.
+
+---
+
+## Star Topology
+
+In star topology, every device is connected to a central device such as a switch or hub.
+
+All communication passes through the central device. This arrangement simplifies troubleshooting and allows easy expansion of the network.
+
+However, the failure of the central device can affect the entire network.
+
+---
+
+## Ring Topology
+
+In a ring topology, devices are connected in a circular manner, with each device connected to two neighboring devices.
+
+Data travels from one device to the next until it reaches its destination.
+
+Ring topology provides orderly communication but can be affected if one connection in the ring fails.
+
+---
+
+## Mesh Topology
+
+In a mesh topology, devices are interconnected with multiple communication paths.
+
+Because several paths exist between devices, mesh topology offers excellent reliability and fault tolerance.
+
+However, the large number of connections makes the network expensive and complex to implement.
+
+---
+
+## Tree Topology
+
+Tree topology combines the characteristics of star and bus topologies. Devices are arranged hierarchically, forming a structure similar to a tree.
+
+This topology is highly scalable and suitable for large organizations.
+
+---
+
+## Hybrid Topology
+
+Hybrid topology is formed by combining two or more topologies.
+
+It provides flexibility and allows network designers to choose the most suitable structure according to requirements.
+
+---
+
+# Transmission Media
+
+Transmission media provide the physical path through which data travels from one device to another.
+
+Transmission media are broadly classified into two categories.
+
+---
+
+## Guided Media
+
+Guided media use physical cables to carry signals.
+
+Common types include:
+
+* Twisted Pair Cable
+* Coaxial Cable
+* Fiber Optic Cable
+
+Guided media generally provide better security and stable communication.
+
+---
+
+## Unguided Media
+
+Unguided media transmit signals through the air using electromagnetic waves.
+
+Examples include:
+
+* Radio Waves
+* Microwaves
+* Infrared Waves
+
+Wireless communication technologies are based on unguided media.
+
+---
+
+# Advantages of Computer Networks
+
+Computer networks offer several benefits:
+
+* Efficient resource sharing.
+* Improved communication.
+* Centralized data management.
+* Reduced operational costs.
+* Increased reliability.
+* Easy scalability.
+
+These advantages have made networking an essential component of modern computing systems.
+
+---
+
+# Limitations of Computer Networks
+
+Despite their benefits, networks also present certain challenges.
+
+* Security threats such as hacking and malware.
+* High installation and maintenance costs.
+* Dependence on network availability.
+* Possibility of hardware and software failures.
+
+Proper planning and security mechanisms are therefore necessary to maintain reliable network operation.
+
+---
+
+# Conclusion
+
+Computer networks form the backbone of modern communication systems. They allow devices to exchange information, share resources, and provide services on a local as well as global scale. Understanding networking fundamentals is essential because advanced topics such as the OSI model, IP addressing, DNS, subnetting, and transport protocols are built upon these basic concepts.
+
+---
+
+### Author
+
+**Sahil**
+
+**UID: 25MCI10088**
+
+---
