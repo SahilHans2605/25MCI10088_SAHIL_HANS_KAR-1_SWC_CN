@@ -1,0 +1,496 @@
+# Networking Devices
+
+---
+
+# Introduction
+
+A computer network consists of multiple devices that work together to enable communication and resource sharing. These devices are responsible for forwarding data, connecting different networks, amplifying signals, and ensuring efficient communication between systems.
+
+Each networking device performs a specific function and operates at one or more layers of the OSI model. Understanding these devices is essential because they form the backbone of modern communication systems.
+
+---
+
+# Hub
+
+## Introduction
+
+A hub is one of the simplest networking devices used to connect multiple devices within a network. It acts as a central connection point through which data is transmitted between connected systems.
+
+Unlike intelligent devices, a hub does not examine or filter the information it receives. Whenever data arrives, the hub simply forwards that data to every connected device.
+
+---
+
+## Working Principle
+
+A hub works on the **Physical Layer (Layer 1)** of the OSI model. It neither stores MAC addresses nor determines the intended recipient of a frame.
+
+As a result, all devices connected to the hub receive the transmitted data, regardless of whether the information is meant for them.
+
+---
+
+## Characteristics
+
+* Operates at the Physical Layer.
+* Does not perform filtering.
+* Supports half-duplex communication.
+* Creates a single collision domain.
+* Offers limited efficiency.
+
+---
+
+## Advantages
+
+* Simple design.
+* Easy installation.
+* Low cost.
+
+---
+
+## Limitations
+
+* Generates unnecessary traffic.
+* Higher probability of collisions.
+* Reduced network performance.
+* Limited security.
+
+---
+
+# Switch
+
+## Introduction
+
+A switch is an intelligent networking device that connects multiple devices within a Local Area Network. Unlike a hub, a switch can identify the destination device and forward data only to the intended receiver.
+
+Switches have largely replaced hubs because they provide better performance and improved network efficiency.
+
+---
+
+## Working Principle
+
+A switch operates at the **Data Link Layer (Layer 2)** of the OSI model.
+
+It maintains a table containing MAC addresses and their corresponding ports. When a frame arrives, the switch checks the destination MAC address and forwards the frame only to the appropriate port.
+
+This selective forwarding minimizes unnecessary traffic and improves overall network performance.
+
+---
+
+## Characteristics
+
+* Operates at Layer 2.
+* Uses MAC addresses.
+* Supports full-duplex communication.
+* Reduces collisions.
+* Improves bandwidth utilization.
+
+---
+
+## Types of Switches
+
+### Unmanaged Switch
+
+An unmanaged switch requires no configuration and is commonly used in small networks.
+
+### Managed Switch
+
+A managed switch provides advanced features such as VLAN configuration, traffic monitoring, and security settings.
+
+---
+
+## Advantages
+
+* Faster communication.
+* Efficient use of bandwidth.
+* Reduced collision domains.
+* Improved security compared to hubs.
+
+---
+
+## Limitations
+
+* More expensive than hubs.
+* Requires configuration in advanced environments.
+
+---
+
+# Router
+
+## Introduction
+
+A router is a networking device responsible for connecting different networks and directing data packets from one network to another.
+
+Routers play a crucial role in enabling communication between local networks and the Internet.
+
+---
+
+## Working Principle
+
+Routers operate at the **Network Layer (Layer 3)** of the OSI model.
+
+They examine IP addresses and determine the best possible path for forwarding packets. To accomplish this, routers maintain routing tables containing information about various networks.
+
+Whenever a packet arrives, the router analyzes its destination IP address and forwards the packet through the most suitable route.
+
+---
+
+## Characteristics
+
+* Operates at Layer 3.
+* Uses logical addressing.
+* Connects multiple networks.
+* Determines optimal paths.
+* Separates broadcast domains.
+
+---
+
+## Types of Routing
+
+### Static Routing
+
+In static routing, routes are manually configured by network administrators.
+
+### Dynamic Routing
+
+Dynamic routing allows routers to automatically discover and update routes using routing protocols.
+
+---
+
+## Advantages
+
+* Connects different networks.
+* Supports communication over large distances.
+* Improves traffic management.
+* Enhances network security.
+
+---
+
+## Limitations
+
+* More expensive than switches.
+* Configuration can be complex.
+
+---
+
+# Bridge
+
+## Introduction
+
+A bridge is a device used to connect two segments of a network. Its primary purpose is to reduce unnecessary traffic and improve communication efficiency.
+
+---
+
+## Working Principle
+
+A bridge operates at the **Data Link Layer (Layer 2)**.
+
+It analyzes MAC addresses and decides whether a frame should remain within the same segment or be forwarded to another segment.
+
+This filtering process reduces congestion and improves network performance.
+
+---
+
+## Characteristics
+
+* Operates at Layer 2.
+* Uses MAC addresses.
+* Divides collision domains.
+* Filters unnecessary traffic.
+
+---
+
+## Advantages
+
+* Improves performance.
+* Reduces collisions.
+* Increases network efficiency.
+
+---
+
+## Limitations
+
+* Limited scalability.
+* Slower compared to modern switches.
+
+---
+
+# Repeater
+
+## Introduction
+
+Signals weaken as they travel over long distances. A repeater is used to regenerate weakened signals and extend the communication range.
+
+---
+
+## Working Principle
+
+Repeaters operate at the **Physical Layer (Layer 1)**.
+
+When a weak signal arrives, the repeater reconstructs and amplifies it before transmitting it further.
+
+This process helps maintain signal quality and enables communication over longer distances.
+
+---
+
+## Characteristics
+
+* Operates at Layer 1.
+* Regenerates signals.
+* Extends transmission distance.
+
+---
+
+## Advantages
+
+* Increases coverage area.
+* Maintains signal strength.
+* Simple and inexpensive.
+
+---
+
+## Limitations
+
+* Does not filter data.
+* Cannot reduce network traffic.
+
+---
+
+# Gateway
+
+## Introduction
+
+A gateway acts as an interface between two networks that use different protocols or architectures.
+
+It enables communication between systems that would otherwise be incompatible.
+
+---
+
+## Working Principle
+
+A gateway performs protocol conversion and data translation to ensure that information can be understood by both networks.
+
+Because of this capability, gateways are often called protocol converters.
+
+---
+
+## Characteristics
+
+* Supports communication between dissimilar networks.
+* Performs protocol conversion.
+* Operates at multiple OSI layers.
+
+---
+
+## Advantages
+
+* Enables interoperability.
+* Connects heterogeneous networks.
+* Supports different communication standards.
+
+---
+
+## Limitations
+
+* More complex than other devices.
+* Can introduce processing delays.
+
+---
+
+# Modem
+
+## Introduction
+
+The term modem is derived from **Modulator-Demodulator**.
+
+A modem enables communication between digital devices and analog transmission systems.
+
+---
+
+## Working Principle
+
+Computers generate digital signals, whereas traditional communication lines carry analog signals.
+
+A modem converts digital signals into analog signals during transmission and converts them back into digital form when received.
+
+---
+
+## Characteristics
+
+* Performs signal conversion.
+* Connects users to Internet Service Providers.
+* Supports both modulation and demodulation.
+
+---
+
+## Advantages
+
+* Enables Internet access.
+* Supports long-distance communication.
+
+---
+
+## Limitations
+
+* Performance depends on communication technology.
+* Speed limitations may exist in older modems.
+
+---
+
+# Access Point
+
+## Introduction
+
+An Access Point (AP) provides wireless connectivity to devices within a network.
+
+It acts as a bridge between wireless devices and a wired network.
+
+---
+
+## Working Principle
+
+Wireless devices communicate with the access point through radio waves. The access point then forwards the data to the wired network.
+
+This mechanism enables laptops, smartphones, and tablets to access network resources without physical cables.
+
+---
+
+## Characteristics
+
+* Supports wireless communication.
+* Expands network coverage.
+* Enables mobility.
+
+---
+
+## Advantages
+
+* Provides flexibility.
+* Simplifies connectivity.
+* Supports multiple devices.
+
+---
+
+## Limitations
+
+* Susceptible to interference.
+* Requires proper security measures.
+
+---
+
+# Firewall
+
+## Introduction
+
+A firewall is a security device designed to protect networks from unauthorized access and malicious traffic.
+
+It acts as a barrier between trusted and untrusted networks.
+
+---
+
+## Working Principle
+
+A firewall examines incoming and outgoing packets and decides whether they should be allowed or blocked based on predefined security rules.
+
+By controlling traffic, firewalls help prevent cyberattacks and unauthorized access.
+
+---
+
+## Characteristics
+
+* Monitors network traffic.
+* Enforces security policies.
+* Prevents unauthorized access.
+
+---
+
+## Types of Firewalls
+
+### Packet Filtering Firewall
+
+Examines individual packets based on source and destination addresses.
+
+### Stateful Firewall
+
+Maintains information about active connections and provides improved security.
+
+### Application Firewall
+
+Analyzes application-level traffic to detect malicious activities.
+
+---
+
+## Advantages
+
+* Improves network security.
+* Prevents unauthorized access.
+* Monitors traffic effectively.
+
+---
+
+## Limitations
+
+* Improper configuration can create vulnerabilities.
+* Advanced firewalls may be expensive.
+
+---
+
+# Network Interface Card (NIC)
+
+## Introduction
+
+A Network Interface Card (NIC) is a hardware component that enables a device to connect to a network.
+
+Without a NIC, a computer cannot participate in network communication.
+
+---
+
+## Working Principle
+
+The NIC converts data generated by the computer into signals suitable for transmission over the network and performs the reverse operation when receiving data.
+
+Each NIC possesses a unique physical address known as the **MAC Address**, which helps identify devices within a network.
+
+---
+
+## Characteristics
+
+* Provides network connectivity.
+* Contains a unique MAC address.
+* Supports wired or wireless communication.
+
+---
+
+## Advantages
+
+* Enables communication between devices.
+* Provides reliable connectivity.
+
+---
+
+# Comparison of Networking Devices
+
+| Device       | OSI Layer       | Address Used       | Main Function                    |
+| ------------ | --------------- | ------------------ | -------------------------------- |
+| Hub          | Layer 1         | None               | Broadcasts data                  |
+| Repeater     | Layer 1         | None               | Regenerates signals              |
+| Switch       | Layer 2         | MAC Address        | Forwards frames                  |
+| Bridge       | Layer 2         | MAC Address        | Connects LAN segments            |
+| Router       | Layer 3         | IP Address         | Connects networks                |
+| Gateway      | Multiple Layers | Protocol-dependent | Connects different architectures |
+| Firewall     | Multiple Layers | Rules and Policies | Provides security                |
+| Access Point | Layer 2         | MAC Address        | Wireless connectivity            |
+
+---
+
+# Conclusion
+
+Networking devices perform specialized tasks that enable efficient communication and resource sharing. Simple devices such as hubs and repeaters operate at lower layers of the OSI model, whereas intelligent devices like switches, routers, gateways, and firewalls provide advanced functionalities. Together, these devices form the infrastructure that supports modern computer networks and Internet communication.
+
+---
+
+### Author
+
+**Sahil**
+
+**UID: 25MCI10088**
+
+---
