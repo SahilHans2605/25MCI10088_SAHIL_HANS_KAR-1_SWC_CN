@@ -1,0 +1,444 @@
+# Domain Name System (DNS)
+
+---
+
+# Introduction
+
+The Internet consists of millions of devices that communicate using IP addresses. Although computers can easily process numerical addresses, remembering these addresses is difficult for humans. To solve this problem, the **Domain Name System (DNS)** was developed.
+
+DNS acts as the naming system of the Internet. It translates human-readable domain names into IP addresses that computers use for communication.
+
+Because of DNS, users can access websites using names such as `www.google.com` instead of remembering numerical addresses.
+
+---
+
+# What is DNS?
+
+The Domain Name System (DNS) is a distributed and hierarchical naming system used to map domain names to IP addresses.
+
+It serves as a directory for the Internet, enabling users and applications to locate servers and services efficiently.
+
+Without DNS, users would have to remember the IP address of every website and service they wish to access.
+
+---
+
+# Need for DNS
+
+As the Internet grew, maintaining a list of all websites and their IP addresses became impractical. DNS was introduced to simplify communication and improve scalability.
+
+DNS provides several benefits:
+
+* Simplifies access to websites.
+* Eliminates the need to memorize IP addresses.
+* Supports the growth of the Internet.
+* Enables flexibility in changing server addresses.
+* Improves management of Internet resources.
+
+---
+
+# Domain Names
+
+A domain name is a human-readable identifier used to represent a website or service.
+
+A domain name consists of multiple parts arranged hierarchically.
+
+Consider the following domain:
+
+```text
+www.google.com
+```
+
+It contains three components:
+
+### Top-Level Domain (TLD)
+
+The rightmost part of the domain.
+
+Example:
+
+```text
+.com
+```
+
+Top-level domains categorize websites and are managed by designated authorities.
+
+Examples include:
+
+* .com
+* .org
+* .edu
+* .gov
+* .net
+
+---
+
+### Second-Level Domain
+
+This portion identifies the organization or entity.
+
+Example:
+
+```text
+google
+```
+
+---
+
+### Subdomain
+
+Subdomains are used to organize services or sections within a domain.
+
+Example:
+
+```text
+www
+```
+
+Organizations may create multiple subdomains according to their requirements.
+
+---
+
+# Hierarchical Structure of DNS
+
+DNS follows a hierarchical structure that resembles an inverted tree.
+
+At the top of the hierarchy is the root domain, followed by top-level domains and lower-level domains.
+
+This structure ensures efficient organization and management of Internet resources.
+
+---
+
+## Root Domain
+
+The root domain represents the highest level of the DNS hierarchy.
+
+Although it is usually not visible, it exists above all domain names.
+
+Root servers contain information about top-level domain servers.
+
+---
+
+## Top-Level Domain (TLD)
+
+The next level consists of top-level domains such as:
+
+* .com
+* .org
+* .edu
+* .gov
+
+TLD servers maintain information about domains registered under them.
+
+---
+
+## Authoritative Domain
+
+The authoritative server stores the actual resource records associated with a domain.
+
+These records contain information such as IP addresses and mail server details.
+
+---
+
+# DNS Servers
+
+DNS relies on several types of servers working together.
+
+---
+
+## Recursive Resolver
+
+A recursive resolver receives queries from users and performs the task of locating the required IP address.
+
+Its primary purpose is to act on behalf of the client and obtain the desired information.
+
+---
+
+## Root Server
+
+Root servers represent the highest level of the DNS infrastructure.
+
+Their role is not to provide IP addresses directly but to direct queries toward the appropriate top-level domain servers.
+
+---
+
+## TLD Server
+
+Top-Level Domain servers manage information related to specific domain extensions.
+
+These servers guide queries toward the authoritative servers responsible for the requested domain.
+
+---
+
+## Authoritative Name Server
+
+The authoritative server contains the final answer for a domain.
+
+It stores resource records and provides the IP address associated with the requested website.
+
+---
+
+# DNS Resolution Process
+
+When a user enters a domain name into a browser, several steps occur before the webpage can be accessed.
+
+---
+
+## Step 1: User Request
+
+The browser sends a request to the recursive resolver.
+
+---
+
+## Step 2: Root Server Query
+
+If the information is not already cached, the resolver contacts a root server.
+
+The root server directs the resolver to the appropriate TLD server.
+
+---
+
+## Step 3: TLD Server Query
+
+The resolver contacts the TLD server.
+
+The TLD server identifies the authoritative server responsible for the requested domain.
+
+---
+
+## Step 4: Authoritative Server Query
+
+The resolver requests the IP address from the authoritative server.
+
+The authoritative server responds with the required information.
+
+---
+
+## Step 5: Response to Client
+
+The resolver sends the IP address back to the user's device.
+
+The browser then establishes communication with the web server.
+
+---
+
+# Recursive and Iterative Queries
+
+DNS queries can be classified into two categories.
+
+---
+
+## Recursive Query
+
+In a recursive query, the DNS server assumes responsibility for obtaining the complete answer.
+
+The client receives either the requested information or an error message.
+
+Recursive queries simplify communication for the client.
+
+---
+
+## Iterative Query
+
+In an iterative query, the server provides the best information available and directs the client toward another server if necessary.
+
+The client is responsible for contacting additional servers.
+
+This method distributes the workload across multiple systems.
+
+---
+
+# DNS Caching
+
+To improve efficiency, DNS responses are temporarily stored.
+
+This process is known as DNS caching.
+
+Caching reduces:
+
+* Network traffic.
+* Response time.
+* Load on DNS servers.
+
+Cached information remains available for a specific duration known as the **Time to Live (TTL)**.
+
+Once the TTL expires, fresh information must be retrieved.
+
+---
+
+# DNS Resource Records
+
+DNS servers store information in the form of resource records.
+
+These records define how domain names are associated with services and addresses.
+
+---
+
+## A Record
+
+An A record maps a domain name to an IPv4 address.
+
+It is one of the most commonly used DNS records.
+
+---
+
+## AAAA Record
+
+An AAAA record maps a domain name to an IPv6 address.
+
+It performs the same function as an A record but supports IPv6.
+
+---
+
+## MX Record
+
+MX stands for Mail Exchange.
+
+These records specify the mail servers responsible for handling email communication for a domain.
+
+---
+
+## CNAME Record
+
+CNAME stands for Canonical Name.
+
+It creates an alias for another domain name.
+
+This simplifies management because multiple names can point to a single resource.
+
+---
+
+## NS Record
+
+NS records identify the authoritative name servers responsible for a domain.
+
+They help direct queries to the correct servers.
+
+---
+
+## TXT Record
+
+TXT records store textual information associated with a domain.
+
+These records are commonly used for verification and email security mechanisms.
+
+---
+
+## PTR Record
+
+PTR records are used for reverse DNS lookups.
+
+Instead of converting a domain name into an IP address, PTR records convert an IP address into a domain name.
+
+---
+
+# Forward Lookup
+
+Forward lookup is the process of converting a domain name into an IP address.
+
+This is the most common operation performed by DNS.
+
+Users typically experience forward lookups whenever they access websites.
+
+---
+
+# Reverse Lookup
+
+Reverse lookup performs the opposite operation.
+
+It determines the domain name associated with a particular IP address.
+
+Reverse lookups are often used for:
+
+* Security analysis.
+* Email verification.
+* Troubleshooting.
+
+---
+
+# Distributed Nature of DNS
+
+DNS is not maintained by a single server.
+
+Instead, it is distributed across numerous servers worldwide.
+
+This design provides several advantages:
+
+* Scalability.
+* Fault tolerance.
+* High availability.
+* Improved reliability.
+
+Because of its distributed architecture, DNS can continue functioning even if certain servers become unavailable.
+
+---
+
+# Importance of DNS
+
+DNS is one of the most important components of the Internet.
+
+Its significance includes:
+
+* Providing user-friendly website access.
+* Supporting global Internet scalability.
+* Enabling email services.
+* Facilitating load balancing.
+* Improving performance through caching.
+* Supporting numerous Internet applications.
+
+Without DNS, using the Internet would become extremely difficult and inefficient.
+
+---
+
+# DNS Security Challenges
+
+Despite its importance, DNS faces several security threats.
+
+Some common challenges include:
+
+### DNS Spoofing
+
+Attackers provide false DNS responses to redirect users to malicious websites.
+
+---
+
+### Cache Poisoning
+
+Malicious information is inserted into DNS caches, causing users to receive incorrect addresses.
+
+---
+
+### Distributed Denial of Service (DDoS)
+
+Attackers may overwhelm DNS servers with excessive requests, disrupting services.
+
+---
+
+Modern security mechanisms such as DNSSEC help address these vulnerabilities.
+
+---
+
+# DNSSEC
+
+DNSSEC stands for Domain Name System Security Extensions.
+
+It enhances DNS security by providing mechanisms for authentication and integrity verification.
+
+DNSSEC helps users ensure that the information received from DNS servers is genuine and has not been altered.
+
+---
+
+# Conclusion
+
+The Domain Name System serves as the Internet's directory service, translating domain names into IP addresses and enabling seamless communication between users and servers. Through its hierarchical and distributed architecture, DNS provides scalability, reliability, and efficiency.
+
+Understanding DNS is essential because nearly every Internet activity depends on its ability to locate resources accurately. Without DNS, users would be forced to remember numerical IP addresses, making Internet communication far less convenient and manageable.
+
+---
+
+### Author
+
+**Sahil**
+
+**UID: 25MCI10088**
+
+---
