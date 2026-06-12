@@ -1,0 +1,427 @@
+# IPv4 Addressing
+
+---
+
+# Introduction
+
+For devices to communicate over a network, they must be uniquely identified. This identification is achieved through the use of **IP addresses**. An IP address acts as a logical address that enables devices to locate each other and exchange information.
+
+IPv4, which stands for **Internet Protocol Version 4**, is the most widely used addressing scheme in computer networks. It provides a unique address to each device connected to a network and plays a crucial role in routing data packets between source and destination systems.
+
+---
+
+# What is an IP Address?
+
+An IP address is a numerical identifier assigned to a device participating in a network. It enables routers and other networking devices to determine where data should be sent.
+
+Just as postal addresses help deliver letters to specific locations, IP addresses help deliver packets to their intended destinations.
+
+---
+
+# Internet Protocol Version 4 (IPv4)
+
+IPv4 is the fourth version of the Internet Protocol and uses a **32-bit addressing scheme**.
+
+Since a 32-bit address contains 32 binary digits, IPv4 can theoretically provide:
+
+```text
+2^32 = 4,294,967,296 addresses
+```
+
+However, not all of these addresses are available for public use because some are reserved for special purposes.
+
+---
+
+# Structure of an IPv4 Address
+
+An IPv4 address consists of four groups of numbers separated by periods.
+
+General format:
+
+```text
+X.X.X.X
+```
+
+Example:
+
+```text
+192.168.1.10
+```
+
+Each section is called an **octet** because it contains 8 bits.
+
+Since an octet consists of 8 bits, its decimal value can range from:
+
+```text
+0 to 255
+```
+
+Thus, every IPv4 address contains:
+
+* Four octets
+* Total of 32 bits
+* Decimal notation separated by dots
+
+---
+
+# Binary Representation of IPv4
+
+Computers process information in binary form. Therefore, every IPv4 address has an equivalent binary representation.
+
+Example:
+
+```text
+Decimal:
+192.168.1.10
+
+Binary:
+11000000.10101000.00000001.00001010
+```
+
+Each octet contains exactly eight bits.
+
+Binary representation is important because routers and network devices perform calculations using binary values.
+
+---
+
+# Network ID and Host ID
+
+An IP address consists of two parts:
+
+### Network ID
+
+The network portion identifies the network to which a device belongs.
+
+Devices sharing the same network ID are considered members of the same network.
+
+---
+
+### Host ID
+
+The host portion uniquely identifies a device within that network.
+
+No two devices in the same network should have identical host IDs.
+
+---
+
+# Why Divide an Address?
+
+Separating addresses into network and host portions allows:
+
+* Efficient routing.
+* Organization of devices.
+* Scalability.
+* Better network management.
+
+Routers mainly use the network portion to forward packets.
+
+---
+
+# Public IP Addresses
+
+Public IP addresses are globally unique addresses used on the Internet.
+
+These addresses are assigned by Internet Service Providers (ISPs) and are visible to external networks.
+
+Because they must remain unique worldwide, public IP addresses are carefully managed by organizations responsible for Internet addressing.
+
+---
+
+# Private IP Addresses
+
+Private IP addresses are intended for internal networks and are not directly accessible from the Internet.
+
+Organizations and home networks commonly use private addressing to conserve public IP addresses.
+
+The private address ranges are:
+
+### Class A Private Range
+
+```text
+10.0.0.0 – 10.255.255.255
+```
+
+### Class B Private Range
+
+```text
+172.16.0.0 – 172.31.255.255
+```
+
+### Class C Private Range
+
+```text
+192.168.0.0 – 192.168.255.255
+```
+
+Devices using these addresses communicate externally through Network Address Translation (NAT).
+
+---
+
+# Loopback Address
+
+The loopback address is used by a device to communicate with itself.
+
+The reserved loopback address is:
+
+```text
+127.0.0.1
+```
+
+It is commonly referred to as **localhost**.
+
+Loopback addresses are useful for:
+
+* Testing network applications.
+* Diagnosing communication problems.
+* Verifying protocol functionality.
+
+Packets sent to the loopback address never leave the device.
+
+---
+
+# Special Addresses
+
+Certain addresses are reserved for specific purposes.
+
+### Network Address
+
+Represents the entire network.
+
+The host portion contains all zeros.
+
+Example:
+
+```text
+192.168.1.0
+```
+
+---
+
+### Broadcast Address
+
+Represents all devices within a network.
+
+The host portion contains all ones.
+
+Example:
+
+```text
+192.168.1.255
+```
+
+Broadcast messages are delivered to every device on the network.
+
+---
+
+# Subnet Mask
+
+A subnet mask determines which portion of an IP address represents the network and which portion represents the host.
+
+Example:
+
+IP Address:
+
+```text
+192.168.1.10
+```
+
+Subnet Mask:
+
+```text
+255.255.255.0
+```
+
+In binary form:
+
+```text
+11111111.11111111.11111111.00000000
+```
+
+The ones indicate network bits, while zeros indicate host bits.
+
+Subnet masks are essential for network organization and subnetting.
+
+---
+
+# CIDR Notation
+
+CIDR stands for **Classless Inter-Domain Routing**.
+
+Instead of writing the subnet mask explicitly, CIDR notation specifies the number of network bits.
+
+Example:
+
+```text
+192.168.1.0/24
+```
+
+The number after the slash indicates the number of bits used for the network portion.
+
+Therefore:
+
+```text
+/24 = 24 network bits
+8 host bits
+```
+
+CIDR provides flexibility and helps conserve IP addresses.
+
+---
+
+# Address Types Based on Communication
+
+Depending on how packets are delivered, communication can be categorized into different types.
+
+---
+
+## Unicast Communication
+
+Unicast communication involves one sender and one receiver.
+
+Data is delivered to a single destination device.
+
+Most Internet communication uses unicast transmission.
+
+---
+
+## Broadcast Communication
+
+Broadcast communication sends information to all devices within a network.
+
+Every host receives the transmitted packet.
+
+Broadcast communication is useful for service discovery and address resolution but can increase network traffic.
+
+---
+
+## Multicast Communication
+
+Multicast communication delivers information to a selected group of devices.
+
+Only devices interested in receiving the data process the packets.
+
+Multicast communication helps reduce bandwidth consumption.
+
+---
+
+# Network Address Translation (NAT)
+
+## Introduction
+
+Network Address Translation is a technique that allows multiple devices using private IP addresses to share a single public IP address.
+
+NAT is usually performed by routers.
+
+---
+
+## Need for NAT
+
+IPv4 provides a limited number of addresses.
+
+Without NAT, every device would require a separate public IP address, leading to rapid address exhaustion.
+
+---
+
+## Working of NAT
+
+When an internal device sends a packet to the Internet:
+
+1. The router replaces the private IP address with its public IP address.
+2. The packet travels through the Internet.
+3. Replies are received by the router.
+4. The router forwards the responses to the appropriate internal device.
+
+Thus, NAT enables efficient utilization of public addresses.
+
+---
+
+# Limitations of IPv4
+
+Although IPv4 has been highly successful, it suffers from several limitations.
+
+### Limited Address Space
+
+The number of available addresses is insufficient for the growing number of Internet-connected devices.
+
+---
+
+### Dependence on NAT
+
+The extensive use of NAT increases complexity.
+
+---
+
+### Security Limitations
+
+IPv4 does not provide built-in security mechanisms.
+
+Additional protocols are often required.
+
+---
+
+### Increasing Network Size
+
+Modern technologies such as IoT require significantly more addresses than IPv4 can efficiently provide.
+
+---
+
+# Introduction to IPv6
+
+IPv6 was developed to overcome the limitations of IPv4.
+
+Unlike IPv4, which uses 32 bits, IPv6 uses a 128-bit addressing scheme.
+
+This provides an enormous address space capable of supporting future Internet growth.
+
+IPv6 also offers:
+
+* Improved efficiency.
+* Better routing.
+* Enhanced security support.
+* Elimination of address exhaustion problems.
+
+---
+
+# Comparison Between IPv4 and IPv6
+
+| Feature           | IPv4          | IPv6                   |
+| ----------------- | ------------- | ---------------------- |
+| Address Size      | 32 bits       | 128 bits               |
+| Address Format    | Decimal       | Hexadecimal            |
+| Address Space     | Limited       | Extremely Large        |
+| NAT Requirement   | Commonly Used | Generally Not Required |
+| Security          | Optional      | Better Support         |
+| Header Complexity | More Complex  | Simplified             |
+
+---
+
+# Importance of IPv4 Addressing
+
+IPv4 addressing forms the foundation of modern networking. It enables devices to be uniquely identified and supports communication across local networks and the Internet.
+
+Understanding IPv4 addressing is essential before studying advanced topics such as:
+
+* Subnetting
+* Routing
+* DHCP
+* NAT
+* DNS
+* Network Security
+
+These concepts rely heavily on a proper understanding of IP addresses and their structure.
+
+---
+
+# Conclusion
+
+IPv4 addressing provides the logical framework that allows devices to communicate over networks. By dividing addresses into network and host portions, using subnet masks and CIDR notation, and employing mechanisms such as NAT, IPv4 has supported the rapid growth of the Internet for decades. Despite its limitations, it remains one of the most fundamental concepts in computer networking and serves as the basis for many advanced networking technologies.
+
+---
+
+### Author
+
+**Sahil**
+
+**UID: 25MCI10088**
+
+---
