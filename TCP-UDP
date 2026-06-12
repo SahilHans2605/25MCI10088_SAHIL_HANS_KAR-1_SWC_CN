@@ -1,0 +1,408 @@
+# TCP and UDP Protocols
+
+---
+
+# Introduction
+
+Communication over a network involves much more than simply sending bits from one device to another. Data must reach the correct destination, arrive in the proper order, and sometimes be protected against loss or corruption.
+
+These responsibilities are handled by the **Transport Layer** of the TCP/IP and OSI models.
+
+Two major protocols operate at this layer:
+
+* Transmission Control Protocol (TCP)
+* User Datagram Protocol (UDP)
+
+Although both protocols perform the task of delivering data between applications, they differ significantly in terms of reliability, speed, and overhead.
+
+---
+
+# Transport Layer Overview
+
+The Transport Layer is responsible for providing communication between processes running on different devices.
+
+Its primary objectives include:
+
+* End-to-end communication.
+* Segmentation and reassembly of data.
+* Error detection and recovery.
+* Flow control.
+* Multiplexing and demultiplexing.
+* Reliable delivery when required.
+
+The Transport Layer acts as a bridge between the application layer and the lower networking layers.
+
+---
+
+# Ports and Process Communication
+
+Multiple applications may run simultaneously on a computer. Therefore, the Transport Layer uses **port numbers** to identify which application should receive incoming data.
+
+For example:
+
+* Web services commonly use port 80 and 443.
+* Email services use ports such as 25 and 110.
+* DNS typically uses port 53.
+
+Ports allow several applications to communicate over the network without interfering with one another.
+
+---
+
+# Transmission Control Protocol (TCP)
+
+## Introduction
+
+Transmission Control Protocol, commonly known as TCP, is a connection-oriented transport layer protocol.
+
+It is designed to provide reliable communication between devices. TCP ensures that information reaches its destination accurately, without duplication, and in the same order in which it was transmitted.
+
+Because reliability is its primary objective, TCP is widely used in applications where data integrity is more important than speed.
+
+---
+
+# Characteristics of TCP
+
+TCP possesses several important features.
+
+### Connection-Oriented Communication
+
+Before transferring data, TCP establishes a connection between the sender and receiver.
+
+Both systems agree to communicate and maintain the connection throughout the data exchange process.
+
+---
+
+### Reliable Delivery
+
+TCP guarantees that data reaches the destination.
+
+If packets are lost during transmission, TCP retransmits them automatically.
+
+---
+
+### Ordered Delivery
+
+Packets may take different paths through a network and arrive in an unexpected sequence.
+
+TCP rearranges these packets to restore the original order.
+
+---
+
+### Error Detection
+
+TCP detects errors during transmission and requests retransmission whenever necessary.
+
+This mechanism improves accuracy and reliability.
+
+---
+
+### Flow Control
+
+The receiving system may process information more slowly than the sender transmits it.
+
+Flow control prevents the sender from overwhelming the receiver.
+
+---
+
+### Congestion Control
+
+TCP monitors network conditions and adjusts its transmission rate to avoid excessive congestion.
+
+---
+
+# Establishing a TCP Connection
+
+Before communication begins, TCP establishes a connection using a process called the **Three-Way Handshake**.
+
+The purpose of this procedure is to synchronize both devices and prepare them for reliable communication.
+
+---
+
+## Step 1: SYN
+
+The client sends a synchronization request to the server.
+
+This message indicates that the client wishes to establish communication.
+
+---
+
+## Step 2: SYN-ACK
+
+The server acknowledges the request and simultaneously sends its own synchronization request.
+
+This confirms that the server is ready for communication.
+
+---
+
+## Step 3: ACK
+
+The client sends an acknowledgment back to the server.
+
+After this step, the connection is successfully established and data transmission can begin.
+
+---
+
+# Data Transmission in TCP
+
+Once the connection has been established, data is divided into smaller units called **segments**.
+
+Each segment contains additional information such as:
+
+* Source port number.
+* Destination port number.
+* Sequence number.
+* Acknowledgment number.
+* Error checking information.
+
+These fields enable reliable and organized communication.
+
+---
+
+# Sequence Numbers
+
+TCP assigns a sequence number to every segment.
+
+Sequence numbers allow the receiving device to:
+
+* Detect missing segments.
+* Rearrange out-of-order segments.
+* Reconstruct the original message.
+
+This mechanism guarantees ordered delivery.
+
+---
+
+# Acknowledgment Numbers
+
+After receiving data successfully, the receiver sends an acknowledgment to the sender.
+
+Acknowledgments inform the sender that transmission was successful.
+
+If acknowledgments are not received within a specified time, TCP assumes that data was lost and retransmits the segment.
+
+---
+
+# Flow Control
+
+Flow control regulates the amount of data transmitted at a time.
+
+Without flow control, a fast sender could overwhelm a slower receiver, resulting in packet loss and reduced efficiency.
+
+TCP employs a sliding window mechanism to control the rate of transmission and maintain balance between sender and receiver.
+
+---
+
+# Congestion Control
+
+Congestion occurs when network resources become overloaded.
+
+TCP uses congestion control mechanisms to reduce transmission rates and prevent excessive traffic from degrading network performance.
+
+This feature helps maintain stability across the network.
+
+---
+
+# Terminating a TCP Connection
+
+After communication is complete, the connection must be closed.
+
+TCP uses a **Four-Way Handshake** to terminate communication.
+
+The process ensures that both devices have finished transmitting all remaining data before the connection is closed.
+
+This mechanism prevents loss of information during connection termination.
+
+---
+
+# Applications of TCP
+
+TCP is preferred in situations where reliability and accuracy are essential.
+
+Common applications include:
+
+* Web browsing.
+* File transfer.
+* Email communication.
+* Remote access services.
+* Database transactions.
+
+These applications require complete and accurate delivery of information.
+
+---
+
+# User Datagram Protocol (UDP)
+
+## Introduction
+
+User Datagram Protocol (UDP) is a connectionless transport layer protocol.
+
+Unlike TCP, UDP does not establish a connection before sending data and does not guarantee delivery.
+
+Its primary objective is speed and low overhead.
+
+---
+
+# Characteristics of UDP
+
+### Connectionless Communication
+
+UDP transmits data without first establishing a connection.
+
+As a result, communication begins immediately.
+
+---
+
+### No Reliability Guarantee
+
+UDP does not confirm whether packets have reached the destination.
+
+Lost packets are not retransmitted.
+
+---
+
+### No Ordered Delivery
+
+Packets may arrive in any order.
+
+UDP does not attempt to rearrange them.
+
+---
+
+### Minimal Overhead
+
+Since UDP does not perform acknowledgments, flow control, or retransmission, it requires fewer resources.
+
+---
+
+### High Speed
+
+The absence of additional reliability mechanisms makes UDP significantly faster than TCP.
+
+---
+
+# Datagram-Based Communication
+
+Information transmitted through UDP is divided into units called datagrams.
+
+Each datagram is treated independently.
+
+Because datagrams are independent, some may be lost or arrive out of sequence.
+
+However, this trade-off results in faster communication.
+
+---
+
+# Why Use UDP?
+
+Although UDP sacrifices reliability, many applications prioritize speed over accuracy.
+
+In real-time communication, delayed packets are often less useful than lost packets.
+
+Therefore, applications that require rapid transmission frequently choose UDP.
+
+---
+
+# Applications of UDP
+
+UDP is commonly used in:
+
+* Video streaming.
+* Online gaming.
+* Voice over IP (VoIP).
+* DNS queries.
+* Live broadcasting.
+
+These applications can tolerate occasional packet loss but require minimal delay.
+
+---
+
+# TCP Header and UDP Header
+
+TCP headers contain numerous control fields because TCP performs many additional functions.
+
+UDP headers are much simpler because UDP does not provide reliability mechanisms.
+
+As a result:
+
+* TCP headers are larger.
+* UDP headers are smaller.
+
+This difference contributes to UDP's higher speed.
+
+---
+
+# Comparison Between TCP and UDP
+
+| Feature            | TCP                       | UDP                     |
+| ------------------ | ------------------------- | ----------------------- |
+| Connection Type    | Connection-Oriented       | Connectionless          |
+| Reliability        | High                      | Low                     |
+| Packet Ordering    | Guaranteed                | Not Guaranteed          |
+| Error Recovery     | Available                 | Not Available           |
+| Flow Control       | Present                   | Absent                  |
+| Congestion Control | Present                   | Absent                  |
+| Speed              | Slower                    | Faster                  |
+| Overhead           | Higher                    | Lower                   |
+| Header Size        | Larger                    | Smaller                 |
+| Applications       | Web, Email, File Transfer | Streaming, Gaming, VoIP |
+
+---
+
+# Choosing Between TCP and UDP
+
+The choice between TCP and UDP depends on application requirements.
+
+### When Reliability Is Important
+
+TCP is preferred because it guarantees accurate delivery.
+
+Examples include:
+
+* File downloads.
+* Banking systems.
+* Email communication.
+
+---
+
+### When Speed Is Important
+
+UDP is preferred because it minimizes delay and processing overhead.
+
+Examples include:
+
+* Online games.
+* Video conferencing.
+* Live streaming.
+
+---
+
+# Importance of TCP and UDP
+
+TCP and UDP are fundamental protocols that enable communication between applications across networks.
+
+Together, they provide flexibility by supporting both:
+
+* Reliable communication when accuracy is critical.
+* Fast communication when speed is essential.
+
+Almost every Internet application depends on one of these protocols.
+
+---
+
+# Conclusion
+
+TCP and UDP represent two different approaches to communication.
+
+TCP emphasizes reliability, error recovery, and ordered delivery, making it suitable for applications that require accuracy. UDP prioritizes speed and simplicity, making it ideal for real-time applications where low latency is more important than perfect delivery.
+
+Understanding the differences between TCP and UDP is essential because these protocols form the foundation of modern Internet communication and are widely used in networking, web services, streaming technologies, and distributed systems.
+
+---
+
+### Author
+
+**Sahil**
+
+**UID: 25MCI10088**
+
+---
