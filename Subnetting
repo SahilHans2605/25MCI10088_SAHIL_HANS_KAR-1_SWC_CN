@@ -1,0 +1,426 @@
+# Subnetting
+
+---
+
+# Introduction
+
+As computer networks grow, managing a large number of devices within a single network becomes inefficient. Excessive traffic, poor organization, and wastage of IP addresses can reduce overall network performance.
+
+To overcome these problems, networks are divided into smaller logical segments called **subnets**, and the process of creating these smaller networks is known as **subnetting**.
+
+Subnetting is one of the most important concepts in computer networking because it enables efficient utilization of IP addresses and improves network management.
+
+---
+
+# What is Subnetting?
+
+Subnetting is the process of dividing a large network into multiple smaller networks called subnets.
+
+Instead of having all devices communicate within one large network, subnetting creates smaller groups of devices. Each subnet behaves as an independent network while still being capable of communicating with other subnets through routers.
+
+This division improves efficiency, security, and scalability.
+
+---
+
+# Need for Subnetting
+
+Without subnetting, all devices belong to a single network. Such networks become difficult to manage as the number of devices increases.
+
+Subnetting is necessary because it:
+
+* Reduces network congestion.
+* Improves performance.
+* Provides better security.
+* Enables efficient use of IP addresses.
+* Simplifies administration.
+* Limits broadcast traffic.
+* Supports hierarchical network design.
+
+As organizations grow, subnetting becomes essential for maintaining efficient communication.
+
+---
+
+# Network Address and Host Address
+
+Every IP address consists of two parts:
+
+### Network Portion
+
+The network portion identifies the network to which a device belongs.
+
+Devices having the same network portion are members of the same network.
+
+---
+
+### Host Portion
+
+The host portion identifies a particular device within that network.
+
+Each device must have a unique host address.
+
+---
+
+# Role of Subnet Mask
+
+A subnet mask determines which bits represent the network and which bits represent the host.
+
+Consider the subnet mask:
+
+```text
+255.255.255.0
+```
+
+Its binary representation is:
+
+```text
+11111111.11111111.11111111.00000000
+```
+
+The bits represented by **1s** correspond to the network portion, whereas the bits represented by **0s** correspond to the host portion.
+
+Subnet masks are therefore essential for identifying network boundaries.
+
+---
+
+# Why Binary Representation Matters
+
+Computers process addresses in binary form. Therefore, subnet calculations are performed using binary numbers.
+
+Each octet contains eight bits.
+
+Possible values of a bit:
+
+* 0
+* 1
+
+Binary calculations allow routers and network devices to distinguish between network and host information.
+
+---
+
+# CIDR Notation
+
+Classless Inter-Domain Routing (CIDR) provides a compact method of representing subnet masks.
+
+Instead of writing:
+
+```text
+255.255.255.0
+```
+
+We can represent the same subnet mask as:
+
+```text
+/24
+```
+
+The number after the slash indicates the number of bits used for the network portion.
+
+For example:
+
+### /24
+
+* 24 network bits
+* 8 host bits
+
+### /26
+
+* 26 network bits
+* 6 host bits
+
+### /30
+
+* 30 network bits
+* 2 host bits
+
+CIDR notation simplifies network representation and allows flexible address allocation.
+
+---
+
+# Borrowing Bits
+
+Subnetting works by borrowing bits from the host portion and assigning them to the network portion.
+
+As more bits are borrowed:
+
+* Number of subnets increases.
+* Number of hosts per subnet decreases.
+
+This creates a trade-off between the number of networks and the number of devices that each network can support.
+
+---
+
+# Number of Subnets
+
+The number of possible subnets depends on the number of borrowed bits.
+
+The formula is:
+
+```text
+Number of Subnets = 2ⁿ
+```
+
+where **n** represents the number of borrowed bits.
+
+---
+
+# Number of Hosts
+
+The number of hosts in a subnet depends on the number of host bits remaining.
+
+The formula is:
+
+```text
+Number of Hosts = 2ⁿ − 2
+```
+
+The subtraction of two occurs because:
+
+* One address is reserved for the network address.
+* One address is reserved for the broadcast address.
+
+Therefore, these addresses cannot be assigned to devices.
+
+---
+
+# Network Address
+
+The network address represents the subnet itself.
+
+In the network address, all host bits are set to zero.
+
+For example:
+
+```text
+192.168.1.0
+```
+
+The network address identifies the entire subnet rather than a specific device.
+
+---
+
+# Broadcast Address
+
+The broadcast address represents all devices within a subnet.
+
+In the broadcast address, all host bits are set to one.
+
+For example:
+
+```text
+192.168.1.255
+```
+
+Packets sent to the broadcast address are received by every device in that network.
+
+---
+
+# Host Range
+
+The host range contains all usable addresses between the network address and the broadcast address.
+
+Only addresses within this range can be assigned to devices.
+
+Thus:
+
+* First address = Network address
+* Last address = Broadcast address
+* Addresses in between = Usable host addresses
+
+---
+
+# Fixed Length Subnet Mask (FLSM)
+
+## Introduction
+
+Fixed Length Subnet Masking divides a network into subnets of equal size.
+
+Every subnet contains the same number of host addresses.
+
+---
+
+## Characteristics
+
+* Equal-sized subnets.
+* Simple design.
+* Easy to manage.
+* May lead to address wastage.
+
+---
+
+## Advantages
+
+* Simplicity.
+* Easier calculations.
+* Uniform network structure.
+
+---
+
+## Limitations
+
+FLSM is inefficient when different departments or networks require different numbers of hosts.
+
+In such cases, many addresses remain unused.
+
+---
+
+# Variable Length Subnet Mask (VLSM)
+
+## Introduction
+
+Variable Length Subnet Masking allows different subnets to have different sizes.
+
+Instead of assigning equal-sized subnets to every network, VLSM allocates addresses according to actual requirements.
+
+---
+
+## Characteristics
+
+* Flexible.
+* Efficient utilization of addresses.
+* Supports hierarchical design.
+
+---
+
+## Advantages
+
+* Reduces address wastage.
+* Improves scalability.
+* Allows efficient planning.
+
+---
+
+## Limitations
+
+* More complex calculations.
+* Requires careful planning.
+
+---
+
+# Importance of Subnetting
+
+Subnetting provides numerous advantages:
+
+### Better Performance
+
+Smaller networks reduce unnecessary traffic and improve communication speed.
+
+---
+
+### Enhanced Security
+
+Different departments or users can be placed in separate subnets, limiting unauthorized access.
+
+---
+
+### Efficient Address Utilization
+
+Subnetting minimizes address wastage and allows better allocation of resources.
+
+---
+
+### Easier Network Management
+
+Smaller networks are easier to monitor and troubleshoot.
+
+---
+
+### Reduced Broadcast Traffic
+
+Broadcast messages remain confined to individual subnets, improving overall efficiency.
+
+---
+
+# Subnetting and Routers
+
+Routers play a vital role in subnetting.
+
+Each subnet represents an independent network, and routers enable communication between these networks.
+
+Without routers, devices belonging to different subnets would not be able to exchange information.
+
+Thus, subnetting and routing are closely related concepts.
+
+---
+
+# Practical Applications of Subnetting
+
+Subnetting is widely used in:
+
+### Educational Institutions
+
+Different departments may have separate subnets for students, faculty, and administration.
+
+---
+
+### Corporate Networks
+
+Organizations often separate departments such as Human Resources, Finance, and Research into individual subnets.
+
+---
+
+### Internet Service Providers
+
+ISPs use subnetting to efficiently allocate addresses to customers.
+
+---
+
+### Data Centers
+
+Subnetting enables servers and services to be logically separated for improved performance and security.
+
+---
+
+# Relationship Between Subnetting and CIDR
+
+Subnetting and CIDR are closely connected.
+
+CIDR provides a notation system that allows subnet masks to be represented compactly, while subnetting uses these masks to divide networks into smaller segments.
+
+Modern networks primarily rely on CIDR because it provides flexibility and efficient address utilization.
+
+---
+
+# Common Mistakes in Subnetting
+
+Students often make several mistakes while performing subnet calculations:
+
+* Confusing network and host bits.
+* Forgetting to subtract two when calculating hosts.
+* Incorrectly determining broadcast addresses.
+* Misinterpreting CIDR notation.
+* Mixing decimal and binary calculations.
+
+Understanding the underlying concepts helps avoid these errors.
+
+---
+
+# Importance of Learning Subnetting
+
+Subnetting forms the foundation for many advanced networking concepts, including:
+
+* Routing.
+* VLANs.
+* Network design.
+* IP address planning.
+* Data center architecture.
+* Cloud networking.
+
+Because of its importance, subnetting is considered one of the most fundamental topics in computer networking.
+
+---
+
+# Conclusion
+
+Subnetting is the process of dividing large networks into smaller and more manageable segments. By reducing broadcast traffic, improving security, and enabling efficient use of IP addresses, subnetting plays a crucial role in modern network design.
+
+Understanding subnetting is essential for anyone studying networking because many advanced technologies and routing mechanisms depend upon proper subnet planning.
+
+---
+
+### Author
+
+**Sahil**
+
+**UID: 25MCI10088**
+
+---
